@@ -1,4 +1,5 @@
 import {defineType, defineArrayMember} from 'sanity'
+import customImage from './customImage'
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -56,12 +57,8 @@ export default defineType({
         ],
       },
     }),
-    // You can add additional types here. Note that you can't use
-    // primitive types such as 'string' and 'number' in the same array
-    // as a block type.
-    defineArrayMember({
-      type: 'image',
-      options: {hotspot: true},
-    }),
+    defineArrayMember(
+      customImage
+    ),
   ],
 })
